@@ -1,0 +1,389 @@
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>个人简历</title>
+<style>
+    /*图标样式*/
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?m3h84j');
+  src:  url('fonts/icomoon.eot?m3h84j#iefix') format('embedded-opentype'),
+  url('fonts/icomoon.ttf?m3h84j') format('truetype'),
+  url('fonts/icomoon.woff?m3h84j') format('woff'),
+  url('fonts/icomoon.svg?m3h84j#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-phone:before {
+  content: "\e942";
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+.icon-mail2:before {
+  content: "\ea84";
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+.icon-github:before {
+  content: "\eab0";
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding: 3px;
+}
+
+/*重置*/
+body {
+  margin: 0;
+}
+.inner-call ul, .inner-my-main ul, .work ul, .ability ul {
+  list-style-type: none;
+}
+.inner-call ul li, .inner-my-main li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.inner-my-main li {
+  float: left;
+  width: 50%;
+}
+h1 {
+  font-size: 24px;
+  text-align: center;
+}
+h2, .ability ul li:nth-child(1) b {
+  font-size: 16px;
+}
+.primary-left, .secondary-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*primary-left*/
+.inner-photo-border, .inner-ability, .inner-call,.inner-my-main {
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+}
+.my-photo {
+  background-image: url("http://coding.imweb.io/img/project/resume/avatar.png");
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-color: #ffffff;
+  box-shadow: 0 0 5px 5px #5db0f3;
+}
+.primary-left {
+  background-image: url(http://coding.imweb.io/img/project/resume/bg.png);
+  background-color: #188eee;
+  color: #ffffff;
+  min-height:100vh;
+}
+.inner-my-main ul {
+  border: 1px solid #000000;
+  border-radius: 5px;
+  padding-left: 10px;
+  width: 90%;
+  color: #cccccc;
+}
+/*secondary-right*/
+.secondary-right {
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 12px;
+}
+.inner-title h1 {
+  color: #188eee;
+}
+.inner-title h1:before {
+  content: "";
+  display: block;
+  background-color: #cccccc;
+  height: 1px;
+  width: 35%;
+  position: relative;
+  top: 17px;
+}
+.inner-title h1:after {
+  content: "";
+  display: block;
+  background-color: #cccccc;
+  height: 1px;
+  width: 35%;
+  position: relative;
+  left: 65%;
+  top: -17px;
+}
+.work ul:before {
+  content: "";
+  display: block;
+  background: linear-gradient(to bottom, #cccccc 90%, #ffffff) no-repeat;
+  height: 260px;
+  width: 1px;
+  position: relative;
+  left: -30px;
+  float: left;
+  bottom: -30px;
+}
+.work ul li:before {
+  content: "";
+  display: block;
+  background: #188eee;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  margin: 0;
+  box-shadow: 0 0 5px 2px #5db0f3;
+  position: relative;
+  left: -35px;
+  top: 30px;
+}
+.ability ul {
+  padding-left: 0;
+}
+.ability ul li:nth-child(3) {
+  background: #cccccc;
+  height: 5px;
+  padding: 0;
+  border-radius: 5px;
+  margin-bottom: 30px;
+}
+.ability ul li:nth-child(1) span {
+  border: 1px solid #000000;
+  float: right;
+  border-radius: 20px;
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.ability ul li:nth-child(3) span {
+  display: block;
+  height: 5px;
+  background: linear-gradient(to right, #117ad4 18%, #188eee, #10b1ed) no-repeat;
+  border-radius: 5px;
+  transform-origin: left top;
+}
+.ability ul:nth-child(1) .level {
+  width: 90%;
+}
+.ability ul:nth-child(2) .level {
+  width: 90%;
+}
+.ability ul:nth-child(3) .level {
+  width: 90%;
+}
+.ability ul:nth-child(4) .level {
+  width: 90%;
+}
+/*响应式设计 媒体查询*/
+@media (min-width: 768px) {
+  .inner-center {
+    display: flex;
+  }
+  .primary-left,.secondary-right {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+/*动画特效*/
+
+/*左侧照片框闪烁阴影动画特效*/
+.my-photo:hover {
+  animation: starFlick 0.8s linear infinite;
+}
+@keyframes starFlick {
+  0% {
+    box-shadow: 0 0 0 0 #5db0f3;
+  }
+  50% {
+    box-shadow: 0 0 10px 8px #5db0f3;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #5db0f3;
+  }
+}
+/*右侧工作经历圆圈闪烁阴影动画，工作技能进度条动画特效*/
+
+/*右侧工作经历圆圈闪烁阴影动画*/
+.work ul li:hover:before {
+  animation: star 0.8s linear infinite;
+}
+@keyframes star {
+  0% {
+    box-shadow: 0 0 0 0 #5db0f3;
+  }
+  50% {
+    box-shadow: 0 0 5px 2px #5db0f3;
+  }
+  100% {
+    box-shadow: 0 0 0 0 #5db0f3;
+  }
+}
+/*工作技能进度条动画特效*/
+.ability ul li:nth-child(3):hover span {
+  animation: progressInit 0.6s both infinite;
+}
+@keyframes progressInit {
+  0% {
+    transform: scaleX(0.2);
+  }
+  50% {
+    transform: scaleX(0.5);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+</style>
+</head>
+<body>
+<section>
+    <div class="inner-center">
+        <!--left-top-->
+        <div class="primary-left">
+            <div>
+                <div class="inner-photo-border">
+                    <div class="my-photo"></div>
+                </div>
+                <h1>廖振钦</h1>
+                <div class="inner-ability">
+                    <span>念经(coding)，参禅(thinking)，化缘(searching)</span>
+                </div>
+                <div class="inner-call">
+                    <ul>
+                        <li>邮箱:996298643@qq.com</li>
+                        <li>电话:18223484385</li>
+                        <li>个人网站:<a target="_blank" href="https://liaozhq.github.io">https://liaozhq.github.io</a></li>
+                    </ul>
+                </div>
+                <div class="inner-my-main">
+                    <ul>
+                        <li>学历：本科</li>
+                        <li>工作年限：2年</li>
+                        <li>毕业院校：西南大学</li>
+                        <li>出生年月：1996年1月</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--right-bottom-->
+        <div class="secondary-right">
+            <!--secondary-main-->
+            <div>
+                <div>
+                    <div class="inner-title">
+                        <h1>工作经历</h1>
+                    </div>
+                    <div>
+
+                                <h2>2017.02-至今</h2>
+                                <h2>中国软件与技术服务有限公司/智慧城市事业部</h2>
+                                <p>
+                                              负责中国软件在重庆的项目代码开发.
+                                </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="inner-title">
+                        <h1>项目经历</h1>
+                    </div>
+                    <div class="work">
+                        <ul>
+                            <li>
+                                <h2>2017.02-2018.06</h2>
+                                <h2>重庆市监狱管理局监管执法系统</h2>
+                                <p>
+                                              监管执法系统是重庆市监狱管理局管理局管理重庆所有监狱罪犯从法院判刑到入监出监的业务系统由于该项目业务功能点非常的多,我们使用了国产没有服务层的框架jfinal该框架只有Ctrl层和(Dao层和Model层都在一层)数据库使用的国 产达梦数据库(公司的子公司的产品,几乎支持oracle全部语法,但是还是有那么几个不支持)前台主要使用了jquery,jquery ui,前台模板语言freemarker,后台quart,jersey(轻量级rest框架个人感觉非常适合与jfinal集成到一起),本项目还有非常多的流程功能,流程框架使用的是国人写的snaker flow框架(轻量级的流程框架)github有开源代码总共7000来行已经停更了.项目主要的大功能模块:狱政管理(最大的功能模块),刑法执行,狱内侦查,教育改造,劳动改造,生活卫生,上报司法部数据统计除了各个功能模块的开发,上报司法部数据统计报表,存储过程和sql全部是由我一个人写的.
+                                </p>
+                            </li>
+                            <li>
+                                <h2>2017.02-2017.8</h2>
+                                <h2>警察人事系统</h2>
+                                <p>
+                                    
+                                </p>
+                            </li>
+                            <li>
+                                <h2>2017.08-2017.9</h2>
+                                <h2>培训考试系统</h2>
+                                <p>
+                                    
+                                </p>
+                            </li>
+                            <li>
+                                <h2>2017.09-2018.5</h2>
+                                <h2>罪犯消费购物系统</h2>
+                                <p>
+                                    
+                                </p>
+                            </li>
+                            <li>
+                                <h2>2018.06-2018.12</h2>
+                                <h2>罪犯危险性评估系统</h2>
+                                <p>
+                                    
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!--secondary-down-->
+                <div>
+                    <div class="inner-title">
+                        <h1>技能特长</h1>
+                    </div>
+                    <div class="ability">
+                        <ul>
+                            <li><b>hmtl/javascript</b><span>精通</span></li>
+                            <li><p>熟悉html标签,jquery,bootstrap和基本的javascript</p></li>
+                            <li><span class="level"></span></li>
+                        </ul>
+                        <ul>
+                            <li><b>Sql</b><span>精通</span></li>
+                            <li><p>写过大量oracle,达梦数据库,存储过程</p></li>
+                            <li><span class="level"></span></li>
+                        </ul>
+                        <ul>
+                            <li><b>Java</b><span>精通</span></li>
+                            <li><p>熟悉spring,javafx,swing,mybatis.hibernat,jfinal, tio 等常用java框架和工具类库</p></li>
+                            <li><span class="level"></span></li>
+                        </ul>
+                        <ul>
+                            <li><b>Linux</b><span>精通</span></li>
+                            <li><p>Ubuntu/Centos7环境下开发工作,熟悉常用linux命令</p></li>
+                            <li><span class="level"></span></li>
+                        </ul>
+                        <ul>
+                            <li><b>Python</b><span>了解</span></li>
+                            <li><p>Ubuntu/Centos7环境下开发工作,熟悉常用linux命令</p></li>
+                            <li><span class="level"></span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
